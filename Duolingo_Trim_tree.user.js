@@ -2,13 +2,12 @@
 // @name         Duolingo Trim tree
 // @namespace    9a84a9d7b3fef7de9d2fd7155dcd794c
 // @description  Hides all golden skills with a button.
-// @author       Arek Olek
+// @author       Arek Olek / Camilo Arboleda
 // @match        https://www.duolingo.com/*
 // @icon         http://arkadiuszolek.student.tcs.uj.edu.pl/greasemonkey/duolingo.png
-// @grant        GM_getValue
-// @grant        GM_setValue
+// @grant        none
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
-// @version      1.5
+// @version      1.6
 // ==/UserScript==
 
 // Credit for [the idea](https://www.duolingo.com/comment/7146895) goes to Thomas de Roo.
@@ -32,8 +31,10 @@ function initialize() {
 
 function update() {
     clearTimeout(update.tid);
-
-    var threshold = GM_getValue('trim_threshold', 6);
+    var item_name = "trim_treshold-" + duo.user.attributes.ui_language + "-"
+                                     + duo.user.attributes.learning_language;
+    var threshold = localStorage.getItem(item_name, 6);
+    if (threshold == null) threshold = 6;
     var trimmed = threshold < 6;
 
     // Show current level and next available action
@@ -55,8 +56,11 @@ function strongerThan(strength) {
 
 $(document).on({
     click: function () {
-        var threshold = GM_getValue('trim_threshold', 6);
-        GM_setValue('trim_threshold', strongerThan(threshold > 5 ? 0 : threshold));
+        var item_name = "trim_treshold-" + duo.user.attributes.ui_language + "-"
+                                         + duo.user.attributes.learning_language;
+        var threshold = localStorage.getItem(item_name, 6);
+        if (threshold == null) threshold = 6;
+        localStorage.setItem(item_name, strongerThan(threshold > 5 ? 0 : threshold));
         update();
     }
 }, '#toggleskills');
