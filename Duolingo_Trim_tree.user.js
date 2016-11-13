@@ -2,11 +2,13 @@
 // @name         Duolingo Trim tree
 // @namespace    9a84a9d7b3fef7de9d2fd7155dcd794c
 // @description  Hides all golden skills with a button.
-// @author       Arek Olek / Camilo Arboleda
+// @author       Arek Olek
 // @match        https://www.duolingo.com/*
 // @icon         http://arkadiuszolek.student.tcs.uj.edu.pl/greasemonkey/duolingo.png
 // @grant        none
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
+// @updateURL    https://gist.github.com/camiloaa/6b902c11f7ab44a4c3ef/raw/Duolingo_Trim_tree.user.js
+// @downloadURL  https://gist.github.com/camiloaa/6b902c11f7ab44a4c3ef/raw/Duolingo_Trim_tree.user.js
 // @version      1.6
 // ==/UserScript==
 
@@ -78,9 +80,3 @@ new MutationObserver(function(mutations) {
     });
 }).observe(document.querySelector('body'), { childList: true });
 
-// Handle loading the home page traditional way
-$(function() {
-    if($('.home').size() == 1) {
-        initialize();
-    }
-});
