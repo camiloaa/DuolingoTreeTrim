@@ -6,10 +6,9 @@
 // @match        https://www.duolingo.com/*
 // @icon         http://arkadiuszolek.student.tcs.uj.edu.pl/greasemonkey/duolingo.png
 // @grant        none
-// @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @updateURL    https://gist.github.com/camiloaa/6b902c11f7ab44a4c3ef/raw/Duolingo_Trim_tree.user.js
 // @downloadURL  https://gist.github.com/camiloaa/6b902c11f7ab44a4c3ef/raw/Duolingo_Trim_tree.user.js
-// @version      1.6
+// @version      1.7
 // ==/UserScript==
 
 // Credit for [the idea](https://www.duolingo.com/comment/7146895) goes to Thomas de Roo.
