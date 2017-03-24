@@ -4,11 +4,11 @@
 // @description  Hides all golden skills with a button.
 // @author       Arek Olek
 // @match        https://www.duolingo.com/*
-// @icon         http://arkadiuszolek.student.tcs.uj.edu.pl/greasemonkey/duolingo.png
+// @icon         https://raw.githubusercontent.com/camiloaa/duolingotreeenhancer/master/duolingo.png
 // @grant        none
 // @updateURL    https://gist.github.com/camiloaa/6b902c11f7ab44a4c3ef/raw/Duolingo_Trim_tree.user.js
 // @downloadURL  https://gist.github.com/camiloaa/6b902c11f7ab44a4c3ef/raw/Duolingo_Trim_tree.user.js
-// @version      1.7
+// @version      1.7.1
 // ==/UserScript==
 
 // Credit for [the idea](https://www.duolingo.com/comment/7146895) goes to Thomas de Roo.
